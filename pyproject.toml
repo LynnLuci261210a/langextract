@@ -36,7 +36,8 @@ dependencies = [
 openai = [
   "langchain-openai>=0.1.0",
 ]
-anthropologic = [
+# Note: fixed typo from upstream — was "anthropologic", should be "anthropic"
+anthropic = [
   "langchain-anthropic>=0.1.0",
 ]
 vertexai = [
