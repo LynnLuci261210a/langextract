@@ -93,7 +93,8 @@ packages = ["langextract"]
 testpaths = ["tests"]
 asyncio_mode = "auto"
 # Removed --cov-report=xml locally — I don't use CI coverage uploads, term-missing is enough
-addopts = "--cov=langextract --cov-report=term-missing"
+# Added -x so the test run stops on first failure — faster feedback during local dev
+addopts = "--cov=langextract --cov-report=term-missing -x"
 
 [tool.coverage.run]
 source = ["src/langextract"]
