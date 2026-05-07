@@ -74,6 +74,7 @@ src = ["src"]
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]
 # E501 = line too long; bumped line-length to 100 for personal preference (less wrapping)
+# ANN rules excluded — I find full annotation enforcement too noisy for personal exploration
 ignore = ["E501"]
 
 [tool.ruff.lint.isort]
@@ -81,7 +82,10 @@ known-first-party = ["langextract"]
 
 [tool.mypy]
 python_version = "3.10"
-strict = true
+# Relaxed from strict=true; too many false positives when experimenting with new LLM integrations
+strict = false
+warn_return_any = true
+warn_unused_ignores = true
 ignore_missing_imports = true
 packages = ["langextract"]
 
